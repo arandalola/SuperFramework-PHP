@@ -24,6 +24,10 @@
                     $method = $route[2];
                     $this->container->call($controller, $method);
                     break;
+                case \FastRoute\Dispatcher::METHOD_NOT_ALLOWED;
+                    header("HTTP/1.0 405 Method not Allowed");
+                    echo"<h1>Method not Allowed</h1>";
+                    break;
             }
         }
     }
