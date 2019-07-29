@@ -4,6 +4,7 @@
     use Doctrine\ORM\Tools\Setup;
     use Doctrine\ORM\EntityManager;
     use Doctrine\Common\Annotations\AnnotationRegistry;
+    
     class DoctrineManager
     {
         public $em;

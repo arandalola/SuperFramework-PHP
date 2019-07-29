@@ -7,6 +7,7 @@
     {
         public function index(){
             $users = $this->doctrineManager->em->getRepository(User::class)->findAll();
+            \Kint::dump($users);
             $this->viewManager->renderTemplate('usersViews.twig.html',['users'=>$users]);
         }
     }
