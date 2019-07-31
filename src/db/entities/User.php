@@ -13,34 +13,34 @@
         * @ORM\Column(type="integer")
         * @ORM\GeneratedValue(strategy="IDENTITY")*/ 
 
-        protected $id;
+        public $id;
 
         /** 
          * @ORM\Column(type="string")*/ 
 
-        protected $name;
+        public $name;
 
         /**
         * @ORM\Column(type="string") */
 
-        protected $email;
+        public $email;
 
         /** 
          * @ORM\Column(type="string")*/
 
-        protected $password;
+        public $password;
 
          /**
           * @ORM\Column(type="datetime")*/ 
 
-         protected $created_at;
+        public $created_at;
 
         /** 
          * @ORM\Column(type="datetime")*/ 
 
-          protected $update_at;
+        public $update_at;
 
-          public function __construct(){
-              $this->created_at =new \Datatime('now');
-          }
+        public function __construct(){
+            $this->created_at = new \Datetime('now');
+        }
     }

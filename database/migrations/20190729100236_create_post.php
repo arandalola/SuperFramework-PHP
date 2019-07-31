@@ -34,7 +34,6 @@ class CreatePost extends AbstractMigration
         $post = $this->table('post');
         $post->addColumn('title', 'string', ['limit'=>80]);
         $post->addColumn('description', 'string', ['limit'=>200]);
-
         $post->addColumn('author', 'string', ['limit'=>80]);
         $post->addColumn('created_at', 'datetime');
         $post->addColumn('update_at', 'datetime', ['null'=>true]);

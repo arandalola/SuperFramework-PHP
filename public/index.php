@@ -3,7 +3,7 @@
 
     use App\Kernel;
 
-    $kernel = new Kernel();
+    $kernel = Kernel::getInstance();
     $kernel->init();
 
    

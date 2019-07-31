@@ -1,5 +1,22 @@
 {% extends "template.twig.html" %}
 
 {% block body %}
-    <h1>Hola Users</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="my-4">Usuarios</h1>
+            {% for user in users %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{user.name}}</h2>
+                    <p class="card-text">{{user.email}}</p>
+                </div>
+                <div class="card-footer text-muted">Posted on {{user.created_at|date('d/m/Y')}} by
+                    <a href="#">{{user.password}}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}

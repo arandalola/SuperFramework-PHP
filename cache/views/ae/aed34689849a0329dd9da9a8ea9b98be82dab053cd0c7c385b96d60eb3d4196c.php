@@ -45,11 +45,55 @@ class __TwigTemplate_0143bab006c7fef30cfd69e83538d9f4904e5fe0188383681fd1abf5900
     <title>PHP</title>
 </head>
 <body>
-
+    <header>
+        <ul class=\"nav justify-content-end\">
+            <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"/\">Home</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/users\">Usuarios</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/post\">Blog</a>
+            </li>
+            ";
+        // line 22
+        if (twig_test_empty(($context["user"] ?? null))) {
+            // line 23
+            echo "            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/login\">Login</a>
+            </li>
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/register\">Registro</a>
+            </li>
+            ";
+        }
+        // line 30
+        echo "            ";
+        if (($context["user"] ?? null)) {
+            // line 31
+            echo "            <div class=\"dropdown\">
+                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenu2\" data-toggle=\"dropdown\" aria-expanded=\"false\">
+                    ";
+            // line 33
+            echo twig_escape_filter($this->env, ($context["user"] ?? null), "html", null, true);
+            echo "
+                </button>
+                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu2\">
+                    <a class=\"dropdown-item\" type=\"button\" href=\"/paneldecontrol\">Panel de Control</a>
+                    <a class=\"dropdown-item\" type=\"button\" href=\"/perfil\">Perfil</a>
+                    <a class=\"dropdown-item\" type=\"button\" href=\"/salir\">Salir</a>
+                </div>
+            </div>
+            ";
+        }
+        // line 42
+        echo "        </ul>
+    </header>
     ";
-        // line 12
+        // line 44
         $this->displayBlock('body', $context, $blocks);
-        // line 14
+        // line 46
         echo "    
     <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
@@ -58,11 +102,11 @@ class __TwigTemplate_0143bab006c7fef30cfd69e83538d9f4904e5fe0188383681fd1abf5900
 </html>";
     }
 
-    // line 12
+    // line 44
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 13
+        // line 45
         echo "    ";
     }
 
@@ -71,9 +115,14 @@ class __TwigTemplate_0143bab006c7fef30cfd69e83538d9f4904e5fe0188383681fd1abf5900
         return "template.twig.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  66 => 13,  62 => 12,  53 => 14,  51 => 12,  38 => 1,);
+        return array (  110 => 45,  106 => 44,  97 => 46,  95 => 44,  91 => 42,  79 => 33,  75 => 31,  72 => 30,  63 => 23,  61 => 22,  38 => 1,);
     }
 
     public function getSourceContext()

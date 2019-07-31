@@ -12,11 +12,10 @@
         public function dispatch(string $requestMethod, string $requestUri, \FastRoute\Dispatcher $dispatcher){
 
             $route=$dispatcher->dispatch($requestMethod, $requestUri);
-            \Kint::dump($route);
             switch($route[0]){
                 case \FastRoute\Dispatcher::NOT_FOUND:
                     header("HTTP/1.1 404 Not Found");
-                    echo "<h1>Not Found</h1>";
+                    $this->container->call(["App\controllers\NotFoundController", "index"],[0]);
                     break;
 
                 case \FastRoute\Dispatcher::FOUND:

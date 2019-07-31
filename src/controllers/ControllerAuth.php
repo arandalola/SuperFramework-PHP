@@ -5,13 +5,13 @@
     use App\LogManager;
     use App\SessionManager;
 
-    abstract class Controller{
+    abstract class ControllerAuth{
 
         protected $viewManager;
         protected $doctrineManager;
         protected $logManager;
         protected $sessionManager;
-
+        protected $user;
 
         public function __construct(ViewManager $viewManager, DoctrineManager $doctrineManager, LogManager $logManager, SessionManager $sessionManager){
             $this->viewManager = $viewManager;
@@ -19,7 +19,8 @@
             $this->logManager = $logManager;
             $this->logManager->info("Controlador ->".get_class($this)." cargado");
             $this->sessionManager = $sessionManager;
-
+            if (!$this->sessionManager->get('user')) return $this->redirectTo('login');
+            $this->user = $this->sessionManager->get('user')[0];
 
         }
 
